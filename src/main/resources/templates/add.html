@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Cards</title>
+</head>
+<body>
+    <h2>Adding a new card!</h2>
+    <p>Here you may add your own learning card.</p>
+
+    <form th:action="@{/addcards}" th:object="${newCard}" method="post">
+        <p>Main language version: <input type="text" name="field1" th:field="*{field1}"></p>
+        <p>Version after translation: <input type="text" name="field2" th:field="*{field2}"></p>
+        <p><input type="submit" value="Add a new card"></p>
+    </form>
+
+    <p><a href="/">Return to main menu</a></p>
+</body>
+</html>

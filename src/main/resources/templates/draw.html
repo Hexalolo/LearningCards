@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Cards</title>
+</head>
+<body>
+    <h2>Drawing a random card</h2>
+    <p>Try to guess what's the translation of the following card.</p>
+
+    <p th:text="${randomCard.getField1()}"></p><br>
+
+    <button type="button" onclick="hide()">Show translation</button>
+    <button type="button" onclick="refresh()">Draw another card</button>
+
+    <div id="myDIV" style="display:none">
+        <p th:text="${randomCard.getField2()}"></p><br>
+    </div>
+
+    <script>
+    function hide() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    function refresh() {
+        window.location.reload(true);
+    }
+    </script>
+
+    <p><a href="/">Return to main menu</a></p>
+</body>
+</html>

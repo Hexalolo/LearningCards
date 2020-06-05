@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Learing Cards</title>
+</head>
+<body>
+    <h2>Delete a learning card</h2>
+    <p>Please choose which card you want to delete.</p>
+
+    <form th:action="@{/deletecards}" th:object="${selectedCard}" method="post">
+        <ul>
+            <li th:each="card : ${list}">
+                <input type="radio"  name="deleteGroup" th:field="*{field1}" th:value="${card}" />
+                <label th:text="${card.getField1()}">Wireframe</label>
+            </li>
+        </ul>
+        <input type="submit" value="Delete selected">
+    </form>
+
+    <p><a href="/">Return to main menu</a></p>
+</body>
+</html>

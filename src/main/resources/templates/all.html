@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Cards!</title>
+</head>
+<body>
+    <h2>See all the available cards!</h2>
+    <p>Below you may find all the cards which were already added.</p>
+    <p><a href="/">Return to main menu</a></p>
+
+    <tr th:each="card:${list}">
+        <td th:text="${card.getField1()}"/><br>
+        <td th:text="${card.getField2()}"/><br>
+        <p>-------------</p>
+    </tr>
+
+    <p><a href="/">Return to main menu</a></p>
+</body>
+</html>
